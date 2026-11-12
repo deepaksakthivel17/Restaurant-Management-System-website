@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServeSmart - Restaurant Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>🍽 ServeSmart</h2>
+    <nav>
+      <a href="#" onclick="showPage('dashboard');return false;">Dashboard</a>
+      <a href="#" onclick="showPage('menu');return false;">Food Menu</a>
+      <a href="#" onclick="showPage('orders');return false;">Orders</a>
+      <a href="#" onclick="showPage('tables');return false;">Tables</a>
+      <a href="#" onclick="showPage('billing');return false;">Billing</a>
+      <a href="#" onclick="showPage('reports');return false;">Reports</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header>
+      <h1 id="pageTitle">Dashboard</h1>
+      <span class="admin-label">Admin Panel</span>
+    </header>
+
+    <section id="dashboard" class="page">
+      <div class="cards">
+        <article class="card"><h3>Total Orders</h3><h2 id="totalOrders">0</h2></article>
+        <article class="card"><h3>Revenue</h3><h2 id="revenue">₹0</h2></article>
+        <article class="card"><h3>Menu Items</h3><h2 id="totalItems">0</h2></article>
+        <article class="card"><h3>Available Tables</h3><h2 id="availableTables">10</h2></article>
+      </div>
+      <h2>Recent Orders</h2>
+      <div id="recentOrders" class="table-wrap"></div>
+    </section>
+
+    <section id="menu" class="page hidden">
+      <h2>Food Menu Management</h2>
+      <div class="form">
+        <input id="foodName" placeholder="Food name" maxlength="60">
+        <input id="foodPrice" type="number" min="0.01" step="0.01" placeholder="Price (₹)">
+        <select id="foodCategory">
+          <option>Breakfast</option><option>Lunch</option><option>Dinner</option>
+          <option>Drinks</option><option>Desserts</option>
+        </select>
+        <button onclick="addFood()">Add Food</button>
+      </div>
+      <div id="menuList" class="table-wrap"></div>
+    </section>
+
+    <section id="orders" class="page hidden">
+      <h2>Customer Orders</h2>
+      <div class="form">
+        <input id="customerName" placeholder="Customer name" maxlength="60">
+        <select id="orderFood"></select>
+        <input id="orderQuantity" type="number" min="1" step="1" value="1">
+        <button onclick="addOrder()">Place Order</button>
+      </div>
+      <div id="orderList" class="table-wrap"></div>
+    </section>
+
+    <section id="tables" class="page hidden">
+      <h2>Restaurant Tables</h2>
+      <p class="hint">Click a table to change its availability.</p>
+      <div id="tableList" class="table-grid"></div>
+    </section>
+
+    <section id="billing" class="page hidden">
+      <h2>Billing Management</h2>
+      <p class="hint">Only served orders can be marked as paid.</p>
+      <div id="billList" class="table-wrap"></div>
+    </section>
+
+    <section id="reports" class="page hidden">
+      <h2>Sales Reports</h2>
+      <article class="card report-card">
+        <h3>Total Paid Revenue</h3>
+        <h2 id="reportRevenue">₹0</h2>
+        <p id="reportOrders">Total Orders: 0</p>
+      </article>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

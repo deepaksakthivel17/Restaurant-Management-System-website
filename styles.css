@@ -1,0 +1,28 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f4f6fa;color:#263238;min-height:100vh}
+.sidebar{position:fixed;inset:0 auto 0 0;width:240px;background:#182536;color:#fff;padding:25px 15px}
+.sidebar h2{text-align:center;color:#ff9f43;margin:5px 0 35px}
+.sidebar nav a{display:block;padding:14px 15px;margin:7px 0;color:#fff;text-decoration:none;border-radius:7px}
+.sidebar nav a:hover{background:#ff9f43;color:#182536}
+.main{margin-left:240px;padding:25px;max-width:1600px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;gap:15px}
+header h1{color:#182536}.admin-label{background:#ff9f43;padding:10px 18px;border-radius:20px;font-weight:bold}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-bottom:35px}
+.card{background:#fff;padding:24px;border-radius:12px;box-shadow:0 3px 12px #00000010}
+.card h3{color:#777;margin-bottom:15px;font-size:16px}.card h2{color:#ef892c;font-size:27px}
+.page{margin-top:20px}.hidden{display:none}.page>h2{margin-bottom:15px}
+.form{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+input,select{padding:12px;border:1px solid #ccd1d8;border-radius:6px;min-width:150px;background:#fff}
+button{padding:11px 16px;background:#ff9638;color:#fff;border:0;border-radius:6px;cursor:pointer}
+button:hover{background:#e87b1c}.danger{background:#d94b45}.success{background:#269b61}
+.action{margin:3px;padding:8px 10px;white-space:nowrap}
+.table-wrap{width:100%;overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;margin-top:15px;min-width:650px}
+th,td{padding:13px;text-align:left;border-bottom:1px solid #eee}
+th{background:#182536;color:#fff}tr:hover td{background:#fafafa}
+.table-grid{display:grid;grid-template-columns:repeat(5,minmax(100px,1fr));gap:18px;margin-top:25px}
+.restaurant-table{padding:28px 12px;text-align:center;border-radius:10px;background:#d9f8df;cursor:pointer}
+.restaurant-table.booked{background:#ffd9d9}.restaurant-table p{margin-top:8px}
+.hint{color:#687585;margin:8px 0}.report-card{max-width:350px;margin-top:20px}
+@media(max-width:950px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.table-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.sidebar{position:static;width:100%;height:auto}.sidebar nav{display:flex;flex-wrap:wrap;gap:4px}.sidebar nav a{padding:9px}.main{margin:0;padding:16px}header{align-items:flex-start}.cards{grid-template-columns:1fr}.table-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
